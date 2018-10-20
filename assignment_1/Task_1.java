@@ -45,6 +45,12 @@ public class Task_1 {
                                 dimension_2.getDimensionValue() * dimension_3.getDimensionValue() +
                                 dimension_1.getDimensionValue() * dimension_3.getDimensionValue()) + " m2"
                 );
+
+
+        double lengthiest = Math.max(dimension_1.getDimensionValue(),
+                            Math.max(dimension_2.getDimensionValue(),dimension_3.getDimensionValue()));
+
+        System.out.println("The lengthiest dimension is " + lengthiest);
     }
 }
 
