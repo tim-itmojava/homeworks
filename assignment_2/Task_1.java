@@ -1,5 +1,10 @@
 package assignment_2;
 
+/*
+a code solving a task to rank 3 input numbers
+by STR, 21/10/2018
+**/
+
 public class Task_1 {
 
     public static void main(String[] args) {
@@ -33,7 +38,7 @@ class Ranking {
     }
 
     public void getRanking(Ranking inputData) {
-        
+
         if (inputData.a==Math.max(Math.max(inputData.a,inputData.b),Math.max(inputData.b,inputData.c))) {
             if (inputData.b > inputData.c) {
                 System.out.println(inputData.c + " " + inputData.b + " " + inputData.a);
