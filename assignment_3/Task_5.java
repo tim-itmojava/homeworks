@@ -1,8 +1,9 @@
 package assignment_3;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
-public class Task_6 {
+public class Task_5 {
 
     public static void main(String[] args) {
 
@@ -71,10 +72,17 @@ public class Task_6 {
         originalString = originalString.replace(toBeReplacedString, replacementString);
         System.out.println(originalString);
 
-//        StringBuilder modifiedString = new StringBuilder();
-//        modifiedString.append(originalString);
-//        modifiedString.toString().replace(toBeReplacedString,replacementString);
-//        System.out.println(modifiedString);
+
+        /*
+        Task_6: getting rid of duplicate symbols and spaces
+        **/
+
+        char[] charArray = new char[originalString.length()];
+
+        for (int i = 0; i <= originalString.length() - 1; i++) {
+            charArray[i] = originalString.charAt(i);
+        }
+        System.out.println(Arrays.toString(charArray));
 
     }
 }
