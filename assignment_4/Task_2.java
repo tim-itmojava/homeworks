@@ -1,15 +1,5 @@
 package assignment_4;
 
-// add(Object obj, int index)
-// remove(int index)
-// get(int index)
-// size()
-// push() - добавление в конец списка
-// pop() - удаляет последний элемент
-// shift() - добавление элемента в начало списка
-// unshift - удаление из начала списка со сдвигом остальных
-
-
 import java.util.Arrays;
 import java.util.UUID;
 
@@ -17,9 +7,9 @@ public class Task_2 {
 
     public static void main(String[] args) {
 
-        MyLinkedList myLinkedList = new MyLinkedList();
 
-        myLinkedList.toString();
+
+        MyLinkedList myLinkedList = new MyLinkedList();
 
         myLinkedList.addNode(10);
         myLinkedList.addNode(100);
@@ -28,21 +18,17 @@ public class Task_2 {
         myLinkedList.addNode(678);
         myLinkedList.addNode(925);
         myLinkedList.addNode(251274);
-        myLinkedList.addNode(565656);
 
         myLinkedList.printingOut();
 
         System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++");
 
-        myLinkedList.getNodeByIndex(2);
+        myLinkedList.removeNode(4);
 
         System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++");
 
-        myLinkedList.removeNode(5);
+        myLinkedList.getNodeByIndex(4);
 
-        System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++");
-
-        myLinkedList.getNodeByIndex(5);
     }
 }
 
@@ -80,15 +66,6 @@ class Node {
     public void setValue(int value) {
         this.value = value;
     }
-
-    @Override
-    public String toString() {
-        return "Node{" +
-                "value=" + value +
-                ", index=" + index +
-                ", nextNode=" + nextNode +
-                '}';
-    }
 }
 
 class MyLinkedList {
@@ -115,7 +92,7 @@ class MyLinkedList {
     public void addNode (int value) {
 
         try {
-                System.out.println("The list looks like the following: " + Arrays.toString(this.Node));
+//                System.out.println("The list looks like the following: " + this.Node.toString());
         }
         catch (Exception e) {
             e.printStackTrace();
@@ -130,8 +107,10 @@ class MyLinkedList {
             this.Node[endPointer] = new Node(value);
             this.Node[endPointer].setIndex(endPointer);
             this.Node[endPointer-1].setNextNode(this.Node[endPointer]);
+
             this.setEndPointer(this.getEndPointer() + 1);
         }
+
     }
 
     public void getNodeByIndex (int index) {
@@ -144,7 +123,6 @@ class MyLinkedList {
                     this.Node[index].getValue() + " ;" +
                     " reference to next: " +
                     this.Node[index].getNextNode() +
-                    " endPointer: " + this.getEndPointer() +
                     " }");
         }
     }
@@ -176,13 +154,12 @@ class MyLinkedList {
     }
 
     public void insertNode(int index) {
-
+    // TODO
     }
 
     public void printingOut() {
         for (int i = 0; i <= this.getEndPointer() - 1 ; i++) {
-            System.out.println("Printing out an element of the list" +
-                    i + " = " +
+            System.out.println("Printing out an element of the list (" + this.session + "): " +
                     "{ " +
                     " index: " +
                     this.Node[i].getIndex() + " ;" +
