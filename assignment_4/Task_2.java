@@ -7,7 +7,11 @@ public class Task_2 {
 
     public static void main(String[] args) {
 
-
+        // MyLinkedList supports the following methods:
+        //  .addNode,
+        //  .getNodeByIndex,
+        //  .removeNode,
+        //  .printingOut
 
         MyLinkedList myLinkedList = new MyLinkedList();
 
