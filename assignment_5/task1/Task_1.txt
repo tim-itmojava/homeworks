@@ -1,0 +1,38 @@
+package assignment_5;
+
+// add(Object obj, int index)
+// remove(int index)
+// get(int index)
+// size()
+// push() - добавление в конец списка
+// pop() - удаляет последний элемент
+// shift() - добавление элемента в начало списка
+// unshift - удаление из начала списка со сдвигом остальных
+
+
+        // MyLinkedList supports the following methods:
+        //  .addNode,
+        //  .getNodeByIndex,
+        //  .removeNode,
+        //  .printingOut
+
+// attic - debugging tools
+
+//                System.out.println("=============================================================");
+//
+//                System.out.println("Checking value of the previous element in the list " +
+//                                                                            this.Node[endPointer-1].getValue());
+//                System.out.println("Checking index of the previous element in the list " +
+//                                                                            this.Node[endPointer-1].getIndex());
+//                System.out.println("Checking reference to the next Node the previous element points to " +
+//                                                                            this.Node[endPointer-1].getNextNode());
+//
+//                System.out.println("Checking value of the current element in the list " +
+//                                                                            this.Node[endPointer].getValue());
+//                System.out.println("Checking index of the current element in the list " +
+//                                                                            this.Node[endPointer].getIndex());
+//                System.out.println("Checking reference to the next Node the current element points to " +
+//                                                                            this.Node[endPointer].getNextNode());
+//                    System.out.println("Node[i].setValue(Node[i+1].getValue())" + Node[i+1].getValue());
+//                    System.out.println("Node[i].setIndex(Node[i+1].getIndex())" + Node[i+1].getIndex());
+//                    System.out.println("Node[i].setNextNode(Node[i+1].getNextNode())" + Node[i+1].getNextNode());

@@ -1,4 +1,4 @@
-package assignment_5;
+package assignment_5.task1;
 
 public class BookObject {
 

@@ -1,4 +1,4 @@
-package assignment_5;
+package assignment_5.task1;
 
 // add(Object obj, int index)                                   (done)
 // remove(int index)                                            (done)

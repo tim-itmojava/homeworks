@@ -1,4 +1,4 @@
-package assignment_5;
+package assignment_5.task1;
 
 import java.util.Iterator;
 import java.util.Scanner;

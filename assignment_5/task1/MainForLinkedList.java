@@ -1,6 +1,4 @@
-package assignment_5;
-
-import java.util.Iterator;
+package assignment_5.task1;
 
 public class MainForLinkedList {
 
