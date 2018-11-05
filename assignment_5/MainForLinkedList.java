@@ -15,53 +15,44 @@ public class MainForLinkedList {
 
         LinkedListAdvanced myLinkedListAdvanced = new LinkedListAdvanced();
 
+        // filling in a List by pushing new Objects in:
         myLinkedListAdvanced.pushNode(book1,1);
         myLinkedListAdvanced.pushNode(book2,2);
-        myLinkedListAdvanced.pushNode(book3,3);
-        myLinkedListAdvanced.pushNode(book4,4);
-        myLinkedListAdvanced.pushNode(book2,5);
+        myLinkedListAdvanced.getNodeByIndex(0);
+        myLinkedListAdvanced.getNodeByIndex(1);
 
+        // filling in the List by adding a new Object to a specified position (index)
+        myLinkedListAdvanced.addNodeByIndex(book3,3,2);     // appending to the end
+        myLinkedListAdvanced.printingOut();
+        System.out.println("Retrieving the last element --> " + myLinkedListAdvanced.getNodeByIndex(myLinkedListAdvanced.getListSize()-1));
+        myLinkedListAdvanced.addNodeByIndex(book4,4,1);     // inserting within the List
+        myLinkedListAdvanced.printingOut();
+        System.out.println("Retrieving the last element --> " + myLinkedListAdvanced.getNodeByIndex(myLinkedListAdvanced.getListSize()-1));
+
+        // checking the size of the List
+        System.out.println("The List is of size --> " + myLinkedListAdvanced.getListSize());
+
+        // popping a Node out
+        myLinkedListAdvanced.popNode();
         myLinkedListAdvanced.printingOut();
 
-        System.out.println(myLinkedListAdvanced.getListSize());
 
+        // adding a Node to the leading position
+        myLinkedListAdvanced.addNodeByIndex(book5,5,0);
+        myLinkedListAdvanced.printingOut();
+
+        System.out.println("Retrieving the last element --> " + myLinkedListAdvanced.getNodeByIndex(myLinkedListAdvanced.getListSize()-1));
+
+        // removing a Node at a specified position
+        myLinkedListAdvanced.removeNodeByIndex(1);
+        myLinkedListAdvanced.printingOut();
+        myLinkedListAdvanced.getNodeByIndex(1);
+
+        myLinkedListAdvanced.addNodeByIndex(new BookObject("Adultery", "Murakami",300),1,1);
+
+        myLinkedListAdvanced.printingOut();
         myLinkedListAdvanced.getNodeByIndex(2);
 
-        System.out.println();
-
-        myLinkedListAdvanced.addNodeByIndex(book5,3,2);
-
-        myLinkedListAdvanced.printingOut();
-
-        myLinkedListAdvanced.pushNode(book1,11);
-        myLinkedListAdvanced.pushNode(book2,12);
-        myLinkedListAdvanced.pushNode(book3,13);
-
-        myLinkedListAdvanced.printingOut();
-
-        myLinkedListAdvanced.popNode();
-
-        myLinkedListAdvanced.printingOut();
-
-        myLinkedListAdvanced.removeNodeByIndex(3);
-
-        myLinkedListAdvanced.printingOut();
-
-        myLinkedListAdvanced.addNodeByIndex(new BookObject("Adultery", "Murakami",300),1,3);
-
-        myLinkedListAdvanced.printingOut();
-
-        myLinkedListAdvanced.removeNodeByIndex(2);
-
-        myLinkedListAdvanced.printingOut();
-
-        LinkedListAdvanced myLinkedListAdvanced1 = new LinkedListAdvanced();
-
-        myLinkedListAdvanced1.addNodeByIndex(new BookObject("Adultery", "Murakami",300),1,0);
-        myLinkedListAdvanced1.addNodeByIndex(new BookObject("Taken by wind", "J-F Rowling", 345),1,1);
-        myLinkedListAdvanced1.addNodeByIndex(new BookObject("Adultery", "Murakami",400),1,2);
-        myLinkedListAdvanced1.addNodeByIndex(new BookObject("Crying in the raw", "Fitz Geraldina", 789),1,3);
-        myLinkedListAdvanced1.printingOut();
-
     }
+
 }

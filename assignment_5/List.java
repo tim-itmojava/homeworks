@@ -6,7 +6,7 @@ package assignment_5;
 // size()                                                       (done)
 // push() - добавление в конец списка                           (done)
 // pop() - удаляет последний элемент                            (done)
-// shift() - добавление элемента в начало списка                        (TODO:)
+// shift() - добавление элемента в начало списка                 (is done as an option in addNodeByIndex, when index = 0)
 // unshift - удаление из начала списка со сдвигом остальных     (done)
 
 // aux: shiftRightByXPositions
@@ -35,7 +35,7 @@ interface Stack {
 
 interface Queue {
 
-//    void shift(Object object);
+//    void shift(Object object);        (is done as an option in addNodeByIndex, when index = 0)
 
     void unshift();
 

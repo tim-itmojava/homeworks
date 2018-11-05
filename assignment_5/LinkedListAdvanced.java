@@ -81,7 +81,7 @@ public class LinkedListAdvanced implements List, Stack, Queue {
                 this.setEndPointer(this.getEndPointer() + 1);
             }
 
-            else if (index > 0 && index < this.getEndPointer()) {
+            else if (index >= 0 && index < this.getEndPointer()) {
                 System.out.println("=========================================================");
                 System.out.println("Adding a Node[" + index + "] in between ....");
                 System.out.println("Adding an object:... " + object.toString() + " at position - index = " + index);
@@ -226,7 +226,7 @@ public class LinkedListAdvanced implements List, Stack, Queue {
 
     public int getListSize() {
         System.out.println("=========================================================");
-        System.out.println("The size of the List");
+//        System.out.println("The size of the List");
         return this.getEndPointer() - 1 + 1;
     }
 
