@@ -110,7 +110,7 @@ public class LinkedListAdvanced implements List, Stack, Queue {
     }
 
     // retrieving a node at a specified position - interface List
-    public Object getNodeByIndex (int index) {
+    public Object getObjectByIndex (int index) {
         System.out.println("=========================================================");
         if (index >=0 && index < this.getEndPointer()) {
             System.out.println("Printing out the list element " + index + " = " +
@@ -125,6 +125,29 @@ public class LinkedListAdvanced implements List, Stack, Queue {
                     this.Node[index].getNextNode() +
                     " }");
             return this.Node[index].getObject();
+        }
+        else {
+            System.out.println("The index is out of the list bounds. Please specify a correct value of the index...");
+            return null;
+        }
+    }
+
+    // retrieving a node at a specified position - interface List
+    public Node getNodeByIndex (int index) {
+        System.out.println("=========================================================");
+        if (index >=0 && index < this.getEndPointer()) {
+            System.out.println("Printing out the list element " + index + " = " +
+                    "{ " +
+                    " index: " +
+                    this.Node[index].getIndex() + " ;" +
+                    "object: " +
+                    this.Node[index].getObject() + ";" +
+                    " value: " +
+                    this.Node[index].getValue() + " ;" +
+                    " reference to next: " +
+                    this.Node[index].getNextNode() +
+                    " }");
+            return this.Node[index];
         }
         else {
             System.out.println("The index is out of the list bounds. Please specify a correct value of the index...");

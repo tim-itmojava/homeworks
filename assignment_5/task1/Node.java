@@ -51,14 +51,14 @@ public class Node {
     public void setIndex(int index) {
         this.index = index;
     }
-
-    @Override
-    public String toString() {
-        return "Node{" +
-                "value=" + value +
-                ", index=" + index +
-                ", nextNode=" + nextNode +
-                ", object=" + object +
-                '}';
-    }
+//
+//    @Override
+//    public String toString() {
+//        return "Node{" +
+//                "value=" + value +
+//                ", index=" + index +
+//                ", nextNode=" + nextNode +
+//                ", object=" + object +
+//                '}';
+//    }
 }
