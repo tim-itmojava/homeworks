@@ -11,6 +11,8 @@ public class MainForLinkedList {
         Object book3 = new BookObject("Taken by wind", "J-F Rowling", 345);
         Object book4 = new BookObject("Crying in the raw", "Fitz Geraldina", 789);
 
+        Object book5 = new BookObject("Crime and Punishment", "F Dostoevsy", 655);
+
         LinkedListAdvanced myLinkedListAdvanced = new LinkedListAdvanced();
 
         myLinkedListAdvanced.pushNode(book1,1);
@@ -27,7 +29,25 @@ public class MainForLinkedList {
 
         System.out.println();
 
+        myLinkedListAdvanced.addNodeByIndex(book5,3,2);
+
+        myLinkedListAdvanced.printingOut();
+
+        myLinkedListAdvanced.pushNode(book1,11);
+        myLinkedListAdvanced.pushNode(book2,12);
+        myLinkedListAdvanced.pushNode(book3,13);
+
+        myLinkedListAdvanced.printingOut();
+
         myLinkedListAdvanced.popNode();
+
+        myLinkedListAdvanced.printingOut();
+
+        myLinkedListAdvanced.removeNodeByIndex(3);
+
+        myLinkedListAdvanced.printingOut();
+
+        myLinkedListAdvanced.addNodeByIndex(new BookObject("Adultery", "Murakami",300),1,3);
 
         myLinkedListAdvanced.printingOut();
 
@@ -37,35 +57,11 @@ public class MainForLinkedList {
 
         LinkedListAdvanced myLinkedListAdvanced1 = new LinkedListAdvanced();
 
-        myLinkedListAdvanced1.pushNode(book1,1);
-        myLinkedListAdvanced1.pushNode(book2,2);
-        myLinkedListAdvanced1.pushNode(book3,3);
-        myLinkedListAdvanced1.pushNode(book4,4);
-        myLinkedListAdvanced1.pushNode(book2,5);
-
+        myLinkedListAdvanced1.addNodeByIndex(new BookObject("Adultery", "Murakami",300),1,0);
+        myLinkedListAdvanced1.addNodeByIndex(new BookObject("Taken by wind", "J-F Rowling", 345),1,1);
+        myLinkedListAdvanced1.addNodeByIndex(new BookObject("Adultery", "Murakami",400),1,2);
+        myLinkedListAdvanced1.addNodeByIndex(new BookObject("Crying in the raw", "Fitz Geraldina", 789),1,3);
         myLinkedListAdvanced1.printingOut();
-
-        myLinkedListAdvanced1.unshift();
-        myLinkedListAdvanced1.unshift();
-        myLinkedListAdvanced.printingOut();
-        myLinkedListAdvanced1.unshift();
-        myLinkedListAdvanced1.unshift();
-        myLinkedListAdvanced1.unshift();
-
-
-/*
-        Iterator iterator = myLinkedListAdvanced.evenIterator();
-
-        while (iterator.hasNext()) {
-            System.out.print(iterator.next().toString());
-            // Why can't I call methods of the Node right here?
-
-            System.out.println();
-
-        }
-**/
-
-
 
     }
 }

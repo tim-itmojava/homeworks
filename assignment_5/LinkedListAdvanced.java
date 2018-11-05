@@ -28,7 +28,7 @@ public class LinkedListAdvanced implements List, Stack, Queue {
     }
 
     // adding a new node at the end of the list - interface Stack
-    public void pushNode (Object object, int value) {
+    public void pushNode (Object object, int value) {       // "value" is optional instance field of a Node
         System.out.println("=========================================================");
 
         try {
@@ -38,12 +38,70 @@ public class LinkedListAdvanced implements List, Stack, Queue {
                 this.Node[0].setIndex(0);
 
                 this.setEndPointer(this.getEndPointer() + 1);
+
             } else {
                 this.Node[endPointer] = new Node(object, value);
                 this.Node[endPointer].setIndex(endPointer);
                 this.Node[endPointer - 1].setNextNode(this.Node[endPointer]);
 
                 this.setEndPointer(this.getEndPointer() + 1);
+            }
+        }
+        catch (Exception e1) {
+            e1.printStackTrace();
+        }
+    }
+
+    public void addNodeByIndex(Object object, int value, int index) {
+        System.out.println("=========================================================");
+
+        try {
+
+            if (this.getEndPointer() == 0 && index == 0) {
+
+                System.out.println("Adding an object:... " + object.toString() + " at position - index = " + index);
+                this.Node[0] = new Node(object, value);
+                this.Node[0].setIndex(0);
+
+                this.setEndPointer(this.getEndPointer() + 1);
+
+            }
+
+            else if (index >= this.getEndPointer()) {
+                System.out.println("=========================================================");
+
+                System.out.println("Adding trailing Node[" + this.getEndPointer() + "] ....");
+                System.out.println("Adding an object:... " + object.toString() + " at position - index = " + index);
+
+                Node[this.getEndPointer()] = new Node(object, value);
+                Node[this.getEndPointer()].setNextNode(null);
+                Node[this.getEndPointer()-1].setNextNode(Node[index]);
+                Node[this.getEndPointer()].setIndex(this.getEndPointer());
+
+                this.setEndPointer(this.getEndPointer() + 1);
+            }
+
+            else if (index > 0 && index < this.getEndPointer()) {
+                System.out.println("=========================================================");
+                System.out.println("Adding a Node[" + index + "] in between ....");
+                System.out.println("Adding an object:... " + object.toString() + " at position - index = " + index);
+
+                this.Node[endPointer] = new Node(this.Node[endPointer-1].getObject(),this.Node[endPointer-1].getValue());
+                this.setEndPointer(this.getEndPointer() + 1);
+
+                for (int i = this.getEndPointer() - 1; i > index; i--) {
+
+                    Node[i-1].setNextNode(Node[i]);
+
+                    Node[i].setIndex(Node[i-1].getIndex() + 1);
+                    Node[i].setObject(Node[i-1].getObject());
+                    Node[i].setValue(Node[i-1].getValue());
+
+                }
+
+                // assigning new instance fields values to the Node being inserted
+                this.Node[index].setObject(object);
+                this.Node[index].setValue(value);
             }
         }
         catch (Exception e1) {
@@ -189,7 +247,7 @@ public class LinkedListAdvanced implements List, Stack, Queue {
         }
     }
 
-    class EvenIterator implements Iterator {
+    class EvenIterator implements Iterator {        // not in use this far
         private int nextIndex;
 
         @Override
@@ -209,5 +267,5 @@ public class LinkedListAdvanced implements List, Stack, Queue {
 
     public Iterator evenIterator() {
         return new EvenIterator();
-    }
+    }   // not in use this far
 }
