@@ -1,7 +1,6 @@
 package assignment_211118_1.task2;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.nio.file.FileSystems;
 import java.util.Scanner;
 import static java.nio.file.Files.size;
@@ -30,23 +29,12 @@ public class HandlingFiles {
             }
         }
     }
-}
 
-/*
-public class GluingFiles {
-    private String[] fileNames;
-    private int buffer;
+    public static void recreateFile(String[] fileNames, int buffer) throws IOException {
 
-    public GluingFiles(String[] fileNames, int buffer) {
-        this.fileNames = fileNames;
-        this.buffer = buffer;
-    }
-
-    public File recreateFile() throws IOException {
-
-        File filePart1 = new File(this.fileNames[0]);
-        File filePart2 = new File(this.fileNames[1]);
-        File fileRestored = new File(this.fileNames[2]);
+        File filePart1 = new File(fileNames[0]);
+        File filePart2 = new File(fileNames[1]);
+        File fileRestored = new File(fileNames[2]);
 
         try(
                 // Opening a stream for reading byte-level data from the source file with buffered access
@@ -60,7 +48,7 @@ public class GluingFiles {
                 OutputStream out2 = new BufferedOutputStream(
                         new FileOutputStream(fileRestored, true));
         ) {
-            byte[] buf = new byte[this.buffer];
+            byte[] buf = new byte[buffer];
             int length; long byte1, byte2, bytes; byte1=byte2=bytes = 0;
 
             try {
@@ -85,11 +73,11 @@ public class GluingFiles {
                 System.out.println("Exception triggered...");
             }
             finally {
-                return fileRestored;
+                // ;
             }
 
         }
     }
+}
 
-**/
 
