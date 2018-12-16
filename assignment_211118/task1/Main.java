@@ -1,7 +1,8 @@
 package assignment_211118.task1;
 
 import assignment_211118.task2.HandlingFiles;
-
+import assignment_211118.task3.XORdecryption;
+import assignment_211118.task3.XORencryption;
 import java.io.File;
 import java.io.IOException;
 
@@ -25,7 +26,15 @@ public class Main {
                                         splittingFile(HandlingFiles.defineHowToSplit(source), source, path, 2048);
 
         // method signature for recreateFile(String[] fileNames, int buffer)
-        HandlingFiles.recreateFile(fileNames, 2048);
+        File recreated = HandlingFiles.recreateFile(fileNames, 2048);
+
+        // passing the recreated file to the encryption code along with a pass-phrase
+        XORencryption encryptionStack = new XORencryption();
+
+        File encryptedFile = encryptionStack.encryptFile(recreated, "password");
+
+        XORdecryption decryptionStack = new XORdecryption();
+        decryptionStack.decryptFile(encryptedFile,"password");
 
     }
 }
