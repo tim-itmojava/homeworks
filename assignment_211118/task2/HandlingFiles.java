@@ -30,7 +30,7 @@ public class HandlingFiles {
         }
     }
 
-    public static void recreateFile(String[] fileNames, int buffer) throws IOException {
+    public static File recreateFile(String[] fileNames, int buffer) throws IOException {
 
         File filePart1 = new File(fileNames[0]);
         File filePart2 = new File(fileNames[1]);
@@ -73,9 +73,8 @@ public class HandlingFiles {
                 System.out.println("Exception triggered...");
             }
             finally {
-                // ;
+                return fileRestored;
             }
-
         }
     }
 }
