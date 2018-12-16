@@ -3,6 +3,7 @@ package assignment_211118.task4;
 import assignment_211118.task1.CopyingFileUI;
 
 import java.io.*;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Main {
@@ -58,7 +59,23 @@ public class Main {
         byte[] output = Main.streamingBytes(source, 256);
         System.out.println(Arrays.toString(output));
 
+        System.out.println("Number of commas encountered in the file: " + Main.countCommas(output));
+
     }
+
+
+    public static int countCommas(byte[] dataStream) {
+
+            int commaCounter = 0;
+            for ( int e : dataStream ) {
+                if (e == 44) {
+                    commaCounter++;
+                }
+            }
+
+            return commaCounter;
+        }
+
 }
 
 class Do {
