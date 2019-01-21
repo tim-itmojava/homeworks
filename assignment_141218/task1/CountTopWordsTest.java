@@ -1,4 +1,4 @@
-package assignment_141218.task2;
+package assignment_141218.task1;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -21,6 +21,33 @@ public class CountTopWordsTest {
         return lines;
     }
 
+    public static void getTop100(Map<String, Integer> hashMap) {
+
+        // decoupling the method parameter from the original object to avoid object mutation
+        Map<String, Integer> inMap = new HashMap<String, Integer>(hashMap);
+
+        Map<String, Integer> top10Map = new HashMap<>();
+
+        for(int i = 1; i <= 100; i++) {
+            Integer j = 0;
+            String key = null;
+            for (Map.Entry<String, Integer> entry : inMap.entrySet()) {
+                if ( entry.getValue() > j) {
+                    // System.out.println("control point");
+                    j = entry.getValue();
+                    key = entry.getKey();
+                }
+            }
+
+            if (!top10Map.containsKey(key)) top10Map.put(key,j);
+            inMap.remove(key, j);
+        }
+
+        System.out.println("Top100 list:");
+        top10Map.forEach((k, v) ->
+                System.out.println("key=" + k + ", value=" + v));
+    }
+
     public static void main(String[] args) {
 
         List<Thread> container = new ArrayList<>();
@@ -40,7 +67,7 @@ public class CountTopWordsTest {
 
         try (BufferedReader buff =
                      new BufferedReader(new InputStreamReader(
-                             new FileInputStream("/Users/timursuyargulov/IdeaProjects/homeworks/bible.txt"))))
+                             new FileInputStream("/Users/timursuyargulov/IdeaProjects/homeworks/wp.txt"))))
         {
             String line;
             while ((line = buff.readLine()) != null) {
@@ -61,15 +88,7 @@ public class CountTopWordsTest {
             }
         }
 
-//        System.out.println("The resulting map:");
-//        finalMap.forEach((k, v) ->
-//                System.out.println("key=" + k + ", value=" + v));
-
-        finalMap.entrySet().stream().sorted(
-                Map.Entry.<String, Integer>comparingByValue()
-                        .reversed())
-                        .limit(100)
-                        .forEach(System.out::println);
+        getTop100(finalMap);
 
         Instant end = Instant.now();
         System.out.println("Time to create individual hashMaps: " + Duration.between(start, end).toNanos()/1000 + " " + '\u03BC' + "s");
